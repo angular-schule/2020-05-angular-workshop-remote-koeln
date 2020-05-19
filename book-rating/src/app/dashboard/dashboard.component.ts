@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
 
 /**
- * Dieser Text ist später in der Dokumentation zu sehen jsdoc.app
+ * Dieser Text ist später in der Dokumentation zu sehen:
+ * jsdoc.app
  */
 @Component({
   selector: 'br-dashboard',
