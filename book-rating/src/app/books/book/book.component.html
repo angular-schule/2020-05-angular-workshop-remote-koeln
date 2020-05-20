@@ -8,7 +8,7 @@
       <h2>
         {{ book.title}}
         <span class="badge badge-secondary">
-            <ng-container *ngFor="let s of book.rating | toArray">⭐️</ng-container></span>
+          <ng-container *ngFor="let s of book.rating | toArray">⭐️</ng-container></span>
       </h2>
     </div>
 
@@ -16,9 +16,11 @@
       {{ book.description }}
     </p>
 
-    <!-- TODO: refactor this! ;-) -->
-    <button (click)="book.rating = book.rating - 1" class="btn btn-secondary mr-2">-</button>
-    <button (click)="book.rating = book.rating + 1" class="btn btn-primary">+</button>
+    <button (click)="doRateDown()"
+      class="btn btn-secondary mr-2">-</button>
+
+    <button (click)="doRateUp()"
+      class="btn btn-primary">+</button>
 
   </div>
 </div>

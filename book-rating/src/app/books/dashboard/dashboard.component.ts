@@ -37,4 +37,12 @@ export class DashboardComponent implements OnInit {
     },
   ];
   }
+
+  doRateDown(book: Book) {
+    console.log('TODO: rate the book!');
+  }
+
+  doRateUp(book: Book) {
+    console.log('TODO: rate the book!');
+  }
 }
