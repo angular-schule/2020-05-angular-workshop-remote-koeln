@@ -8,6 +8,7 @@ import { BooksModule } from './books/books.module';
 @NgModule({
   declarations: [
     AppComponent,
+    // ToArrayPipe,
     // DashboardComponent,
     // BookComponent
   ],
