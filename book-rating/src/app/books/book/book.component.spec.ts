@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookComponent } from './book.component';
+import { ToArrayPipe } from '../shared/to-array.pipe';
 
 describe('BookComponent', () => {
   let component: BookComponent;
@@ -8,7 +9,10 @@ describe('BookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookComponent ]
+      declarations: [
+        BookComponent,
+        ToArrayPipe // Integration-Test
+      ]
     })
     .compileComponents();
   }));
@@ -16,6 +20,12 @@ describe('BookComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookComponent);
     component = fixture.componentInstance;
+    component.book = {
+      isbn: '000',
+      title: 'test',
+      description: 'blubb',
+      rating: 1
+    };
     fixture.detectChanges();
   });
 

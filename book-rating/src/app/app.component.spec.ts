@@ -28,7 +28,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Book Rating');
   });
 
-  fit('should render heading', () => {
+  it('should render heading', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
