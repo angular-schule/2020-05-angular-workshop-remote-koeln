@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "i18n:extract": "ng xi18n --format=xmb --outFile=messages.xmb",
-    "i18n:extract-workaround": "ng build --prod && locl extract -s=dist/book-rating/*.js -f=xmb -o=messages.NEW.xmb"
+    "i18n:extract-workaround": "ng build --prod && locl extract -s=dist/book-rating/*.js -f=xmb -o=messages.NEW.xmb",
+    "i18n:convert-to-json": "locl convert -s=messages.de.xtb -f=json -o=src/assets/messages.de.json"
   },
   "private": true,
   "dependencies": {
