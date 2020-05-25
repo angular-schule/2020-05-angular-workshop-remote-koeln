@@ -1,0 +1,8 @@
+{
+  "locale": "en",
+  "translations": {
+    "BOOK_COUNT": "Book Count:",
+    "AppComponentTest": "This text must be translated, too!",
+    "AppComponentTitle": "Book Rating !"
+  }
+}
