@@ -1,0 +1,4 @@
+<messagebundle>
+  <msg id="AppComponentTest">This text must be translated, too!</msg>
+  <msg id="AppComponentTitle">Book Rating !</msg>
+</messagebundle>

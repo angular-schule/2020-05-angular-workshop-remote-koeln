@@ -21,8 +21,5 @@
 <!ELEMENT ex (#PCDATA)>
 ]>
 <messagebundle>
-  <msg id="AppComponentTitle" desc="Great title, must be catchy"><source>src/app/app.component.html:4,6</source>
-      <ph name="INTERPOLATION"><ex>{{ title }}</ex>{{ title }}</ph>
-    </msg>
-  <msg id="AppComponentTest"><source>src/app/app.component.html:9</source>This text must be translated, too!</msg>
+  <msg id="AppComponentTest"><source>src/app/app.component.html:7</source>This text must be translated, too!</msg>
 </messagebundle>
