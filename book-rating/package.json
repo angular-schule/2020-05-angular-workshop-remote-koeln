@@ -13,7 +13,6 @@
     "i18n:convert-json": "npm run i18n:convert-en-json && npm run i18n:convert-de-json",
     "i18n:convert-en-json": "locl convert -s=messages.en.xtb -f=json -o=src/assets/messages.en.json",
     "i18n:convert-de-json": "locl convert -s=messages.de.xtb -f=json -o=src/assets/messages.de.json"
-
   },
   "private": true,
   "dependencies": {
@@ -22,6 +21,7 @@
     "@angular/common": "~9.1.6",
     "@angular/compiler": "~9.1.6",
     "@angular/core": "~9.1.6",
+    "@angular/elements": "^9.1.7",
     "@angular/forms": "~9.1.6",
     "@angular/localize": "^9.1.9",
     "@angular/platform-browser": "~9.1.6",
@@ -29,6 +29,7 @@
     "@angular/router": "~9.1.6",
     "@locl/cli": "0.0.1-beta.9",
     "@locl/core": "^1.0.0-rc.1",
+    "document-register-element": "^1.7.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
