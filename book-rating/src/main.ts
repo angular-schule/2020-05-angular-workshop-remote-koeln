@@ -11,8 +11,8 @@ if (environment.production) {
 }
 
 // TODO: find a way to switch languages (eg. browser language or token in session storage)
-// const messages = '/assets/messages.de.json';
-const messages = '/assets/messages.en.json';
+const messages = '/assets/messages.de.json';
+//const messages = '/assets/messages.en.json';
 
 // VORHER
 // platformBrowserDynamic().bootstrapModule(AppModule)
