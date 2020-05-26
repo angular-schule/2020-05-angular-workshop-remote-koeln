@@ -17,8 +17,11 @@ import { BookRatingService } from '../shared/book-rating.service';
 export class DashboardComponent implements OnInit {
 
   books: Book[];
+  currentDate: Date;
 
-  constructor(private br: BookRatingService) { }
+  constructor(private br: BookRatingService) {
+    this.currentDate = new Date();
+  }
 
   ngOnInit(): void {
     this.books = [{
