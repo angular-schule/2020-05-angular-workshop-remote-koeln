@@ -32,6 +32,9 @@ export class CreateBookComponent {
   }
 
   submitForm() {
+
+    this.bookForm.valueChanges.subscribe(console.log);
+
     const newBook = {
       ...this.bookForm.value,
       rating: 1

@@ -6,7 +6,7 @@
 
     <div class="card-title">
       <h2>
-        {{ book.title}}
+        {{ book.title}} ({{ book.price | currency: 'EUR' }})
         <span class="badge badge-secondary">
           <ng-container *ngFor="let s of book.rating | toArray">⭐️</ng-container></span>
       </h2>

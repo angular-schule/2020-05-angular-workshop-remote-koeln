@@ -25,19 +25,22 @@ export class DashboardComponent implements OnInit {
       isbn: '111',
       title: 'Angular',
       description: 'Tolles Buch',
-      rating: 5
+      rating: 5,
+      price: 36.9
     },
     {
       isbn: '222',
       title: 'AngularJS',
       description: 'Altes Buch',
-      rating: 3
+      rating: 3,
+      price: 20
     },
     {
       isbn: '333',
       title: 'React',
       description: 'Anderes Buch',
-      rating: 1
+      rating: 1,
+      price: 25.23456789
     },
   ];
   }
