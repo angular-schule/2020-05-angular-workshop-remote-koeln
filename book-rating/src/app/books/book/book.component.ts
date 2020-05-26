@@ -10,7 +10,13 @@ import { Book } from '../shared/book';
 export class BookComponent {
 
   @Input()
-  book: Book;
+  book: Book = {
+    isbn: '000',
+    title: 'Dummy',
+    description: 'Dummy',
+    rating: 5,
+    price: 0
+  };
 
   @Output()
   rateDown = new EventEmitter<Book>();
