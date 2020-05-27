@@ -1,7 +1,8 @@
 <div class="card mb-4">
   <div class="card-body bg-light">
     <img
-      src="https://api.angular.schule/avatar/{{ book.rating }}"
+      [src]="book.firstThumbnailUrl"
+      width="150"
       class="img-thumbnail float-right">
 
     <div class="card-title">
