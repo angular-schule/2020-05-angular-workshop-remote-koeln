@@ -19,7 +19,8 @@ import { CreateBookComponent } from './create-book/create-book.component';
   imports: [
     CommonModule,
     BooksRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // HttpClientModule --- NIIIEMALS machen! https://github.com/angular/angular/issues/20575
   ],
   exports: [
     DashboardComponent
