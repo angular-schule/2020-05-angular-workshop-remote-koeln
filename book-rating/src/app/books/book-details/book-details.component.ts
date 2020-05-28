@@ -15,29 +15,9 @@ export class BookDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(paramMap => this.isbn = paramMap.get('isbn'));
+    this.route.paramMap.pipe(
+      map(p => p.get('isbn'))
+    ).subscribe(isbn => this.isbn = isbn);
 
-
-    //  HIER GEHTS LOS
-
-    // Observer!
-    const observer = {
-      next: e => console.log(e),
-      error: err => console.error(err),
-      complete: () => console.log('COMPLETE')
-    };
-
-    // Observable
-    const observable = of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).pipe(
-      map(x => x * 10),
-      // Hands on
-      filter(x => x >= 30),
-      reduce((x , y) => x + y),
-      map(x => '🤠'.repeat(x))
-    );
-
-    // Subscription
-    const subscription = observable.subscribe(observer);
-    setTimeout(() => subscription.unsubscribe(), 1000);
   }
 }
