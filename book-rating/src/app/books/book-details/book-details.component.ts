@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { of, timer } from 'rxjs';
 
 @Component({
   selector: 'br-book-details',
@@ -14,5 +15,19 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => this.isbn = paramMap.get('isbn'));
+
+
+    //  HIER GEHTS LOS
+
+    // Observer!
+    const observer = {
+      next: e => console.log(e),
+      error: err => console.error(err),
+      complete: () => console.log('COMPLETE')
+    };
+
+    of('😀', '😎', '🤪').subscribe(observer);
+
+
   }
 }
