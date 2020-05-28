@@ -16,7 +16,6 @@ export class BookDetailsComponent {
   book$ = this.route.paramMap.pipe(
     map(p => p.get('isbn')),
     switchMap(isbn => this.bs.getSingleBook(isbn)),
-    shareReplay(1)
   );
 
   constructor(private route: ActivatedRoute, private bs: BookStoreService) { }
