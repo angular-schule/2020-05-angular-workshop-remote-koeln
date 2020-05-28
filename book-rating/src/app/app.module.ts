@@ -20,6 +20,7 @@ import { registerLocaleData } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     BooksModule,
+    // AppRoutingEndModule
     HttpClientModule
   ],
   providers: [
