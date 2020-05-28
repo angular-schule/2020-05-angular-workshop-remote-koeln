@@ -28,6 +28,7 @@ export class BookDetailsComponent implements OnInit {
 
     of('😀', '😎', '🤪').subscribe(observer);
 
+    timer(0, 500).subscribe(observer);
 
   }
 }
