@@ -1,16 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { of, timer, Subscription } from 'rxjs';
+import { of, timer, Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'br-book-details',
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.scss']
 })
-export class BookDetailsComponent implements OnInit, OnDestroy {
+export class BookDetailsComponent implements OnInit {
 
   isbn: string;
-  subscription: Subscription;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -27,12 +26,21 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
       complete: () => console.log('COMPLETE')
     };
 
-    // of('😀', '😎', '🤪').subscribe(observer);
+    // Observable
+    const observable = new Observable(subscriber => {
+      subscriber.next('😍');
+      setTimeout(() => subscriber.next('😘'), 1000);
+      const x = setTimeout(() => { subscriber.next('🌭'); console.log('WURST!!!'); }, 2000);
+      setTimeout(() => subscriber.complete(), 1500);
 
-    this.subscription = timer(0, 500).subscribe(observer);
-  }
+      return () => {
+        console.log('Da wurde unsubscribed, dann muss ich wohl aufräumen!')
+        clearTimeout(x);
+      };
+    });
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    // Subscription
+    const subscription = observable.subscribe(observer);
+    setTimeout(() => subscription.unsubscribe(), 1000);
   }
 }
