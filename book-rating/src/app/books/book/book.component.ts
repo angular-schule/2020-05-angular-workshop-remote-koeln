@@ -5,7 +5,7 @@ import { Book } from '../shared/book';
   selector: 'br-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush // wichtig!
+  // changeDetection: ChangeDetectionStrategy.OnPush // wichtig!
 })
 export class BookComponent {
 
@@ -17,6 +17,9 @@ export class BookComponent {
     rating: 5,
     price: 0
   };
+
+  @Input()
+  test = 'Test';
 
   @Output()
   rateDown = new EventEmitter<Book>();

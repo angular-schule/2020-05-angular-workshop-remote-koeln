@@ -8,6 +8,16 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <book-component test="yay"></book-component>
+
+  <script>
+    let component = document.querySelector('book-component');
+    component.book = {
+      isbn: '000',
+      title: 'Angular',
+      description: 'it works',
+      rating: 5
+    };
+  </script>
 </body>
 </html>
