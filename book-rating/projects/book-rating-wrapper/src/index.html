@@ -11,13 +11,25 @@
   <book-component test="yay"></book-component>
 
   <script>
-    let component = document.querySelector('book-component');
-    component.book = {
-      isbn: '000',
-      title: 'Angular',
-      description: 'it works',
-      rating: 5
-    };
+    document.addEventListener('DOMContentLoaded', function(event) {
+      const comp = document.querySelector('book-component');
+
+      comp.book = {
+        isbn: '000',
+        title: 'Angular',
+        description: 'it works',
+        rating: 5
+      };
+
+      comp.addEventListener("rateUp", function (e) {
+        console.log('Rate Up!', e);
+      });
+
+      comp.addEventListener("rateDown", function (e) {
+        console.log('Rate Down!', e);
+      });
+    });
   </script>
+
 </body>
 </html>
