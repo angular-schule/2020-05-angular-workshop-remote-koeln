@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { of, timer, Subscription, Observable } from 'rxjs';
-import { map, tap, filter, scan, reduce } from 'rxjs/operators';
+import { map, tap, filter, scan, reduce, mergeMap, concatMap, switchMap } from 'rxjs/operators';
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from '../shared/book';
 
@@ -20,9 +20,8 @@ export class BookDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.pipe(
       map(p => p.get('isbn')),
-      map(isbn => this.bs.getSingleBook(isbn))
-    ).subscribe(book$ => book$
-      .subscribe(book => console.log(book)));
+      switchMap(isbn => this.bs.getSingleBook(isbn))
+    ).subscribe(book => this.book = book);
 
   }
 }
