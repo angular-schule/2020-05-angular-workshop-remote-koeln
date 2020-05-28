@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, switchMap, share, shareReplay, catchError } from 'rxjs/operators';
+import { map, switchMap, share, shareReplay, catchError, retry } from 'rxjs/operators';
 
 import { BookStoreService } from '../shared/book-store.service';
 import { of } from 'rxjs';
@@ -17,12 +17,14 @@ export class BookDetailsComponent {
 
   book$ = this.route.paramMap.pipe(
     map(p => p.get('isbn')),
-    switchMap(isbn => this.bs.getSingleBook(isbn)),
-    catchError((e: HttpErrorResponse) => of({
-      isbn: '000',
-      title: 'Es gab einen Fehler',
-      description: e.message
-    }))
+    switchMap(isbn => this.bs.getSingleBook(isbn).pipe(
+      retry(3),
+      catchError((e: HttpErrorResponse) => of({
+        isbn: '000',
+        title: 'Es gab einen Fehler',
+        description: e.message
+      }))
+    ))
   );
 
   constructor(private route: ActivatedRoute, private bs: BookStoreService) { }
