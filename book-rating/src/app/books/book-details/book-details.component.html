@@ -2,7 +2,13 @@
 
 <p>{{ (book$ | async)?.title }}</p>
 
-<p>{{ (book$ | async)?.description }}</p>
+<button (click)="showDetails = !showDetails">
+  Show Details
+</button>
+
+<p *ngIf="showDetails">
+  Details:{{ (book$ | async)?.description }}
+</p>
 
 <hr>
 
