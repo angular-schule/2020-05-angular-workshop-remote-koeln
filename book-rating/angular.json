@@ -240,6 +240,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "book-rating"
+    }
+  },
+  "defaultProject": "book-rating",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
