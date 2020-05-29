@@ -13,7 +13,6 @@
     "i18n:convert-json": "npm run i18n:convert-en-json && npm run i18n:convert-de-json",
     "i18n:convert-en-json": "locl convert -s=messages.en.xtb -f=json -o=src/assets/messages.en.json",
     "i18n:convert-de-json": "locl convert -s=messages.de.xtb -f=json -o=src/assets/messages.de.json"
-
   },
   "private": true,
   "dependencies": {
