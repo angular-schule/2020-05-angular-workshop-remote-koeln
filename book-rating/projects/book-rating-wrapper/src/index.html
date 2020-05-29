@@ -8,6 +8,22 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <!-- <app-root></app-root> -->
+
+  <book-component></book-component>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const comp = document.querySelector('book-component');
+      comp.book = {
+        isbn: '000',
+        title: 'Angular',
+        description: 'it works',
+        rating: 5,
+        firstThumbnailUrl: 'https://api.angular.schule/avatar/0'
+      };
+
+    });
+  </script>
 </body>
 </html>
