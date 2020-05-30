@@ -31,7 +31,7 @@ export class DashboardComponent {
     this.currentDate = new Date();
 
     // dispatch Action!
-    this.store.dispatch(loadBooks());
+    // this.store.dispatch(loadBooks());
   }
 
   doRateDown(book: Book) {

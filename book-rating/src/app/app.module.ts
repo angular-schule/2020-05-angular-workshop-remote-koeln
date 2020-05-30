@@ -8,10 +8,11 @@ import { BooksModule } from './books/books.module';
 import localeDe from '@angular/common/locales/de';
 import localeEn from '@angular/common/locales/en';
 import { registerLocaleData } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, Store } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { loadBooks } from './books/store/book.actions';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,12 @@ import { environment } from '../environments/environment';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
+
+  constructor(private store: Store) {
     registerLocaleData(localeDe);
     registerLocaleData(localeEn);
+
+    // dispatch Action!
+    this.store.dispatch(loadBooks());
   }
 }
